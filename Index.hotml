@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Rishad ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family: "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 50% 40%, #5b164e 0%, #21051f 38%, #08000d 100%);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Background glow */
+
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.35;
+}
+
+body::before{
+    width:250px;
+    height:250px;
+    background:#ff1493;
+    top:-80px;
+    left:-70px;
+}
+
+body::after{
+    width:300px;
+    height:300px;
+    background:#8a2be2;
+    bottom:-120px;
+    right:-80px;
+}
+
+/* Stars */
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 10px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2; transform:scale(.6);}
+    to{opacity:1; transform:scale(1.5);}
+}
+
+/* Main card */
+
+.card{
+    position:relative;
+    z-index:20;
+    width:min(90%,650px);
+    padding:55px 25px;
+    text-align:center;
+
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:35px;
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 0 30px rgba(255,20,147,.15),
+        inset 0 0 30px rgba(255,255,255,.03);
+}
+
+/* Small top text */
+
+.small{
+    font-size:15px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:#ffcce8;
+    margin-bottom:22px;
+    opacity:.85;
+}
+
+/* Main text */
+
+.love{
+    font-size:clamp(40px,10vw,82px);
+    font-weight:800;
+    line-height:1.1;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffb6dc,
+        #ff4da6,
+        #fff
+    );
+
+    background-size:300%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:shine 4s linear infinite;
+
+    filter:
+        drop-shadow(0 0 5px #fff)
+        drop-shadow(0 0 15px #ff1493)
+        drop-shadow(0 0 35px #ff1493);
+}
+
+@keyframes shine{
+    0%{background-position:0%;}
+    100%{background-position:300%;}
+}
+
+/* Heart */
+
+.big-heart{
+    display:inline-block;
+    color:#ff3b9d;
+    animation:beat 1.2s infinite;
+    filter:
+        drop-shadow(0 0 8px #ff1493)
+        drop-shadow(0 0 20px #ff1493);
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1);}
+    15%{transform:scale(1.25);}
+    30%{transform:scale(1);}
+    45%{transform:scale(1.18);}
+}
+
+/* Name */
+
+.name{
+    margin-top:15px;
+    font-size:clamp(38px,9vw,72px);
+    font-weight:700;
+    letter-spacing:3px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #ff69b4,
+        0 0 30px #ff1493,
+        0 0 60px #ff1493;
+
+    animation:nameGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow{
+    from{
+        transform:scale(1);
+        filter:brightness(1);
+    }
+    to{
+        transform:scale(1.03);
+        filter:brightness(1.25);
+    }
+}
+
+/* Message */
+
+.message{
+    margin-top:25px;
+    font-size:17px;
+    line-height:1.7;
+    color:#ffe6f3;
+    opacity:.9;
+}
+
+.line{
+    margin-top:20px;
+    font-size:13px;
+    letter-spacing:3px;
+    color:#ffacd5;
+}
+
+/* Floating hearts */
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    z-index:5;
+    pointer-events:none;
+
+    color:#ff69b4;
+    filter:drop-shadow(0 0 8px #ff1493);
+
+    animation:float linear forwards;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.5);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.9;
+    }
+
+    50%{
+        transform:translateY(-55vh) rotate(180deg) scale(1);
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(360deg) scale(.7);
+        opacity:0;
+    }
+}
+
+/* Sparkles */
+
+.sparkle{
+    position:absolute;
+    color:white;
+    font-size:12px;
+    animation:sparkle 2s infinite alternate;
+    text-shadow:0 0 10px white;
+}
+
+@keyframes sparkle{
+    from{
+        opacity:.1;
+        transform:scale(.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* Tap message */
+
+.tap{
+    margin-top:25px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#ffc1df;
+    opacity:.6;
+}
+
+/* Burst hearts */
+
+.burst{
+    position:absolute;
+    pointer-events:none;
+    z-index:100;
+    animation:burst 1.2s ease-out forwards;
+}
+
+@keyframes burst{
+    0%{
+        transform:translate(0,0) scale(.3);
+        opacity:1;
+    }
+    100%{
+        transform:
+            translate(var(--x),var(--y))
+            rotate(360deg)
+            scale(1.3);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="small">
+        A little message from my heart
+    </div>
+
+    <div class="love">
+        I Love You
+        <span class="big-heart">♥</span>
+    </div>
+
+    <div class="name">
+        Rishad
+    </div>
+
+    <div class="message">
+        Some people make life beautiful<br>
+        just by being a part of it. ❤️
+    </div>
+
+    <div class="line">
+        ✦ FOREVER & ALWAYS ✦
+    </div>
+
+    <div class="tap">
+        ✨ Tap anywhere ✨
+    </div>
+
+</div>
+
+<script>
+
+/* Create stars */
+
+for(let i=0;i<70;i++){
+
+    const star=document.createElement("div");
+    star.className="star";
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDelay=
+        Math.random()*2+"s";
+
+    document.body.appendChild(star);
+}
+
+
+/* Floating hearts */
+
+const hearts=[
+    "♥","❤","♡","💕","💗","💖","💓","💘"
+];
+
+function createHeart(){
+
+    const h=document.createElement("div");
+
+    h.className="heart";
+
+    h.innerHTML=
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    h.style.left=Math.random()*100+"vw";
+
+    h.style.fontSize=
+        (12+Math.random()*28)+"px";
+
+    const duration=
+        5+Math.random()*7;
+
+    h.style.animationDuration=
+        duration+"s";
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>{
+        h.remove();
+    },(duration+1)*1000);
+}
+
+setInterval(createHeart,220);
+
+
+/* Initial hearts */
+
+for(let i=0;i<25;i++){
+
+    setTimeout(
+        createHeart,
+        i*150
+    );
+}
+
+
+/* Sparkles */
+
+for(let i=0;i<30;i++){
+
+    const s=document.createElement("div");
+
+    s.className="sparkle";
+
+    s.innerHTML="✦";
+
+    s.style.left=Math.random()*100+"vw";
+    s.style.top=Math.random()*100+"vh";
+
+    s.style.animationDelay=
+        Math.random()*2+"s";
+
+    document.body.appendChild(s);
+}
+
+
+/* Tap heart burst */
+
+document.addEventListener("click",(e)=>{
+
+    for(let i=0;i<16;i++){
+
+        const b=document.createElement("div");
+
+        b.className="burst";
+
+        b.innerHTML=
+            hearts[Math.floor(Math.random()*hearts.length)];
+
+        b.style.left=e.clientX+"px";
+        b.style.top=e.clientY+"px";
+
+        const angle=
+            Math.random()*Math.PI*2;
+
+        const distance=
+            60+Math.random()*140;
+
+        b.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance+"px"
+        );
+
+        b.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance+"px"
+        );
+
+        b.style.color=
+            ["#ff69b4","#ffb6dc","#ffffff","#ff1493"]
+            [Math.floor(Math.random()*4)];
+
+        b.style.fontSize=
+            (14+Math.random()*20)+"px";
+
+        document.body.appendChild(b);
+
+        setTimeout(()=>{
+            b.remove();
+        },1200);
+    }
+
+});
+
+</script>
+
+</body>
+</html>
